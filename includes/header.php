@@ -51,7 +51,7 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-card"></i><span>Users</span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="#">Manage Users</a></li>
-                                    <li><a href="users/add.php">Add Users</a></li>                              
+                                    <li><a href="adduser.php">Add Users</a></li>                              
                                 </ul>
                             </li>
                         </ul>
