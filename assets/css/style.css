@@ -476,7 +476,7 @@ code {
 }
 
 .bg-purple {
-  background-color: #775fd5 !important;
+  background-color: #0000CB !important;
 }
 
 .text-white {
@@ -516,7 +516,7 @@ code {
 }
 
 .text-purple {
-  color: #775fd5 !important;
+  color: #0000CB !important;
 }
 
 .badge {
@@ -554,7 +554,7 @@ code {
 }
 
 .badge-purple {
-  background-color: #775fd5;
+  background-color: #0000CB;
 }
 
 .badge-dark {
@@ -588,13 +588,13 @@ code {
 }
 
 .badge-soft-pink {
-  background-color: rgba(245, 70, 142, 0.2);
+  background-color: #0000CB;
   color: #f5468e;
 }
 
 .badge-soft-purple {
-  background-color: rgba(119, 95, 213, 0.2);
-  color: #775fd5;
+  background-color: #0000CB;
+  color: #0000CB;
 }
 
 /* Navs & Tabs */
@@ -673,7 +673,7 @@ code {
 }
 
 .custom-radio .custom-control-input:disabled:checked ~ .custom-control-label::before {
-  background-color: rgba(96, 93, 175, 0.5);
+  background-color: #0000CB;
 }
 
 .popover-header {
@@ -746,15 +746,15 @@ code {
 }
 
 .alert.alert-outline-purple {
-  border: 1px solid #775fd5;
+  border: 1px solid #0000CB;
   background-color: transparent;
-  color: #775fd5;
+  color: #0000CB;
 }
 
 .alert.alert-outline-secondary {
-  border: 1px solid #aaaece;
+  border: 1px solid #0000CB;
   background-color: transparent;
-  color: #aaaece;
+  color: #0000CB;
 }
 
 .alert.alert-outline-dark {
@@ -1202,8 +1202,8 @@ code {
 .btn-primary {
   background-color: #0000CB;
   border: 1px solid #0000CB;
-  -webkit-box-shadow: 0 2px 6px 0 rgba(96, 93, 175, 0.5);
-          box-shadow: 0 2px 6px 0 rgba(96, 93, 175, 0.5);
+  -webkit-box-shadow: 0 2px 6px 0 #0000CB;
+          box-shadow: 0 2px 6px 0 #0000CB;
 }
 
 .btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover,
@@ -1211,14 +1211,14 @@ code {
 .show > .btn-outline-primary.dropdown-toggle, .btn-outline-primary:hover, .btn-primary.active, .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:active, .show > .btn-primary.dropdown-toggle,
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
-  background-color: #5350a2 !important;
-  border: 1px solid #5350a2;
+  background-color: #0000CB !important;
+  border: 1px solid #0000CB;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus,
 .btn-primary.focus, .btn-primary:focus, .btn-outline-primary.focus, .btn-outline-primary:focus {
-  -webkit-box-shadow: 0 0 0 2px rgba(96, 93, 175, 0.3);
-  box-shadow: 0 0 0 2px rgba(96, 93, 175, 0.3);
+  -webkit-box-shadow: 0 0 0 2px #0000CB;
+  box-shadow: 0 0 0 2px #0000CB;
 }
 
 /*btn-success*/
@@ -1247,10 +1247,10 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 
 /*btn-secondary*/
 .btn-secondary {
-  background-color: #aaaece;
-  border: 1px solid #aaaece;
-  -webkit-box-shadow: 0 2px 6px 0 rgba(170, 174, 206, 0.5);
-          box-shadow: 0 2px 6px 0 rgba(170, 174, 206, 0.5);
+  background-color: #0000CB;
+  border: 1px solid #0000CB;
+  -webkit-box-shadow: 0 2px 6px 0 #0000CB;
+          box-shadow: 0 2px 6px 0 #0000CB;
 }
 
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active,
@@ -1259,8 +1259,8 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 .open > .dropdown-toggle.btn-secondary, .btn-outline-secondary.active, .btn-outline-secondary:active,
 .show > .btn-outline-secondary.dropdown-toggle, .btn-outline-secondary:hover, .btn-secondary.active,
 .btn-secondary:active, .show > .btn-secondary.dropdown-toggle {
-  background-color: #9a9fc5;
-  border: 1px solid #9a9fc5;
+  background-color: #0000CB;
+  border: 1px solid #0000CB;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active:focus, .show > .btn-secondary.dropdown-toggle:focus,
@@ -1422,25 +1422,25 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 
 /*btn-purple*/
 .btn-purple {
-  background-color: #775fd5;
-  border: 1px solid #775fd5;
+  background-color: #0000CB;
+  border: 1px solid #0000CB;
   color: #ffffff;
-  -webkit-box-shadow: 0 2px 6px 0 rgba(119, 95, 213, 0.5);
-          box-shadow: 0 2px 6px 0 rgba(119, 95, 213, 0.5);
+  -webkit-box-shadow: 0 2px 6px 0 #0000CB;
+          box-shadow: 0 2px 6px 0 #0000CB;
 }
 
 .btn-purple:hover, .btn-purple:focus, .btn-purple:active, .btn-purple.active, .btn-purple.focus,
 .btn-purple:active, .btn-purple:focus, .btn-purple:hover, .open > .dropdown-toggle.btn-purple,
 .btn-outline-purple.active, .btn-outline-purple:active,
 .show > .btn-outline-purple.dropdown-toggle, .btn-outline-purple:hover {
-  background-color: #664bd0;
-  border: 1px solid #664bd0;
+  background-color: #0000CB;
+  border: 1px solid #0000CB;
   color: #ffffff;
 }
 
 .btn-purple.focus, .btn-purple:focus, .btn-outline-purple.focus, .btn-outline-purple:focus {
-  -webkit-box-shadow: 0 0 0 2px rgba(119, 95, 213, 0.3);
-  box-shadow: 0 0 0 2px rgba(119, 95, 213, 0.3);
+  -webkit-box-shadow: 0 0 0 2px #0000CB;
+  box-shadow: 0 0 0 2px #0000CB;
 }
 
 .btn-light {
@@ -1491,8 +1491,8 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 }
 
 .btn-outline-purple {
-  color: #775fd5;
-  border-color: #775fd5;
+  color: #0000CB;
+  border-color: #0000CB;
   background-color: transparent;
   background-image: none;
 }
@@ -1595,10 +1595,10 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 
 /*btn-gradient-secondary*/
 .btn-gradient-secondary {
-  background-image: linear-gradient(120deg, #aaaece 0%, #8898b3 100%);
+  background-image: linear-gradient(120deg, #0000CB 0%, #8898b3 100%);
   color: #ffffff;
-  -webkit-box-shadow: 0 2px 6px 0 rgba(170, 174, 206, 0.5);
-          box-shadow: 0 2px 6px 0 rgba(170, 174, 206, 0.5);
+  -webkit-box-shadow: 0 2px 6px 0 #0000CB;
+          box-shadow: 0 2px 6px 0 #0000CB;
   border: 1px solid #babdd7;
 }
 
@@ -1606,8 +1606,8 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 .btn-gradient-secondary.focus, .btn-gradient-secondary:active, .btn-gradient-secondary:focus, .btn-gradient-secondary:hover,
 .open > .dropdown-toggle.btn-gradient-secondary, .btn-gradient-secondary.active,
 .btn-gradient-secondary:active, .show > .btn-gradient-secondary.dropdown-toggle {
-  background-image: linear-gradient(120deg, #8898b3 0%, #aaaece 100%);
-  border: 1px solid #9a9fc5;
+  background-image: linear-gradient(120deg, #8898b3 0%, #0000CB 100%);
+  border: 1px solid #0000CB;
   color: #ffffff;
 }
 
@@ -1690,8 +1690,8 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 .btn-gradient-primary {
   background-image: linear-gradient(120deg, #0000CB 0%, #3c8da8 100%);
   color: #ffffff;
-  -webkit-box-shadow: 0 2px 6px 0 rgba(96, 93, 175, 0.5);
-          box-shadow: 0 2px 6px 0 rgba(96, 93, 175, 0.5);
+  -webkit-box-shadow: 0 2px 6px 0 #0000CB;
+          box-shadow: 0 2px 6px 0 #0000CB;
   border: 1px solid #9290c8;
 }
 
@@ -1705,8 +1705,8 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 
 .btn-gradient-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-gradient-primary.dropdown-toggle:focus,
 .btn-gradient-primary.focus, .btn-gradient-primary:focus {
-  -webkit-box-shadow: 0 0 0 2px rgba(96, 93, 175, 0.3);
-  box-shadow: 0 0 0 2px rgba(96, 93, 175, 0.3);
+  -webkit-box-shadow: 0 0 0 2px #0000CB;
+  box-shadow: 0 0 0 2px #0000CB;
 }
 
 /*btn-gradient-dark*/
@@ -1780,10 +1780,10 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 
 /*btn-gradient-purple*/
 .btn-gradient-purple {
-  background-image: linear-gradient(120deg, #775fd5 0%, #a456ad 100%);
+  background-image: linear-gradient(120deg, #0000CB 0%, #a456ad 100%);
   color: #ffffff;
-  -webkit-box-shadow: 0 2px 6px 0 rgba(119, 95, 213, 0.5);
-          box-shadow: 0 2px 6px 0 rgba(119, 95, 213, 0.5);
+  -webkit-box-shadow: 0 2px 6px 0 #0000CB;
+          box-shadow: 0 2px 6px 0 #0000CB;
   border: 1px solid #8873da;
 }
 
@@ -1791,14 +1791,14 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 .btn-gradient-purple.focus, .btn-gradient-purple:active, .btn-gradient-purple:focus, .btn-gradient-purple:hover,
 .open > .dropdown-toggle.btn-gradient-purple, .btn-gradient-purple.active,
 .btn-gradient-purple:active, .show > .btn-gradient-purple.dropdown-toggle {
-  background-image: linear-gradient(120deg, #a456ad 0%, #775fd5 100%);
-  border: 1px solid #664bd0;
+  background-image: linear-gradient(120deg, #a456ad 0%, #0000CB 100%);
+  border: 1px solid #0000CB;
 }
 
 .btn-gradient-purple:not(:disabled):not(.disabled):active:focus, .show > .btn-gradient-purple.dropdown-toggle:focus,
 .btn-gradient-purple.focus, .btn-gradient-purple:focus {
-  -webkit-box-shadow: 0 0 0 2px rgba(119, 95, 213, 0.3);
-  box-shadow: 0 0 0 2px rgba(119, 95, 213, 0.3);
+  -webkit-box-shadow: 0 0 0 2px #0000CB;
+  box-shadow: 0 0 0 2px #0000CB;
 }
 
 /* ==============
@@ -3256,7 +3256,7 @@ File: Menu
   font-size: 16px;
   vertical-align: middle;
   color: #ffffff;
-  background: #7471b9;
+  background: #0000CB;
   width: 36px;
   height: 36px;
   display: inline-block;
@@ -3464,13 +3464,13 @@ body.fixed-left .side-menu.left {
 }
 
 .app-search .form-control, .app-search .form-control:focus {
-  border: 1px solid #7471b9;
+  border: 1px solid #0000CB;
   font-size: 13px;
   height: 34px;
   color: #ffffff;
   padding-left: 20px;
   padding-right: 40px;
-  background: #7471b9;
+  background: #0000CB;
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: 30px;
@@ -4010,8 +4010,8 @@ File: Responsive
 }
 
 .text-gradient-primary {
-  background: -webkit-gradient(linear, left top, right top, from(#30CFD0), to(#330867));
-  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#30CFD0), to(#0000CB));
+  background: linear-gradient(to right, #30CFD0 0%, #0000CB 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -4029,7 +4029,7 @@ File: Responsive
 }
 
 .bg-gradient4 {
-  background: linear-gradient(120deg, #606c88 0%, #330867 100%);
+  background: linear-gradient(120deg, #606c88 0%, #0000CB 100%);
 }
 
 .title-border::before {
@@ -4089,15 +4089,15 @@ File: Responsive
 }
 
 .badge.badge-outline-purple {
-  border: 1px solid #775fd5;
+  border: 1px solid #0000CB;
   background-color: transparent;
-  color: #775fd5;
+  color: #0000CB;
 }
 
 .badge.badge-outline-secondary {
-  border: 1px solid #aaaece;
+  border: 1px solid #0000CB;
   background-color: transparent;
-  color: #aaaece;
+  color: #0000CB;
 }
 
 .badge.badge-outline-dark {

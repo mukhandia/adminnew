@@ -7,13 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $role = $_POST['role'];
 
-    $result = insertUser($name, $email, $password, $role);
+    $result = insertUser($conn,$name, $email, $password, $role);
 
     if ($result === true) {
         echo "New user created successfully";
-        
+        header('Location: ../users.php?message=User Added successfully');
     } else {
-        echo $result; // This will output the error message if the insertion failed
+        echo $result; 
     }
 }
 ?>

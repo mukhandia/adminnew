@@ -1,9 +1,6 @@
 <?php
-session_start();
 include "includes/header.php";
-
 ?>
-
 <div class="page-content-wrapper ">
 
     <div class="container-fluid">

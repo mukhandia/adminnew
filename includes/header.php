@@ -1,3 +1,13 @@
+<?php 
+session_start(); // Start session to access session variables
+
+// Check if the user is logged in
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
+    $userName = $_SESSION['user_name'];
+} else {
+    $userName = "Guest"; // Default to "Guest" if not logged in
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,7 +60,7 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-card"></i><span>Users</span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Manage Users</a></li>
+                                    <li><a href="users.php">Manage Users</a></li>
                                     <li><a href="adduser.php">Add Users</a></li>                              
                                 </ul>
                             </li>
@@ -161,11 +171,10 @@
 
                                     </div>
                                 </li>
-
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="false" aria-expanded="false">
-                                        <img src="assets/images/users/avatar-6.jpg" alt="user" class="rounded-circle">
+                                       <?php echo htmlspecialchars($userName); ?>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
@@ -177,11 +186,10 @@
                                         <a class="dropdown-item" href="#"><span class="badge badge-success float-right">5</span><i class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
                                         <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Lock screen</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
+                                        <a class="dropdown-item" href="./logout.php"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                                     </div>
                                 </li>
                             </ul>
-
                             <ul class="list-inline menu-left mb-0">
                                 <li class="float-left">
                                     <button class="button-menu-mobile open-left waves-light waves-effect">
