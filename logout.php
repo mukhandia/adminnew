@@ -1,15 +1,16 @@
 <?php
 session_start();
-require_once 'includes/logger.php';
+require_once 'includes/logger.php'; 
 
-// Log the logout action
+
 if (isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
     $userName = $_SESSION['user_name'];
-    logAction("User logged out. ID: $userId, Name: $userName");
+    
+    if (!logAction("User logged out. ID: $userId, Name: $userName")) {
+        error_log("Failed to log logout action for user ID: $userId"); 
+    }
 }
-
-// Clear session and redirect
 session_unset();
 session_destroy();
 header("Location: auth/login.php");
