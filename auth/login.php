@@ -9,26 +9,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Prepare and execute SQL query
-    $sql = "SELECT id, name, password FROM user_table WHERE email = ?";
+    $sql = "SELECT id, name, password, role FROM user_table WHERE email = ?";
     if ($stmt = $conn->prepare($sql)) {
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $stmt->bind_result($userId, $name, $hashedPassword);
+            $stmt->bind_result($userId, $name, $hashedPassword, $role);
             $stmt->fetch();
 
             if (password_verify($password, $hashedPassword)) {
                 // Start user session
                 $_SESSION['user_id'] = $userId;
                 $_SESSION['user_name'] = $name;
+                $_SESSION['user_role'] = $role;
                 $userEmail = $_SESSION['user_email'];
+                
                 // Log successful login
                 logAction("User with email $email logged in successfully.");
 
-                // Redirect to dashboard or home page
-                header("Location: ../"); // Adjust path if necessary
+                // Redirect based on user role
+                if ($role === 'superadmin') {
+                    header("Location: ../"); 
+                } elseif ($role === 'admin') {
+                    header("Location: ../au"); 
+                    $error = "Unauthorized role.";
+                    logAction("User with email $email attempted to login with unauthorized role.");
+                }
                 exit;
             } else {
                 $error = "Invalid email or password.";

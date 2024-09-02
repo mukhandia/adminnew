@@ -12,4 +12,5 @@ if (!isset($_SESSION['user_id'])) {
 // If the user is logged in, you can access their ID like this:
 $userId = $_SESSION['user_id'];
 $userName = $_SESSION['user_name'];
+$userRole =$_SESSION['user_role'];
 ?>

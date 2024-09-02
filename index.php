@@ -1,6 +1,6 @@
 <?php
 include "includes/header.php";
-include "includes/dbconnection.php";
+include "includes/dbconnection.php"; 
 // Fetch logs from the database with the associated username
 $sql = "
     SELECT 
@@ -25,6 +25,16 @@ if ($result_count->num_rows > 0) {
     $row_count = $result_count->fetch_assoc();
     $user_count = $row_count['user_count'];
 }
+
+$record_count = "SELECT COUNT(*) AS records_count FROM business_records";
+$clients_count = $conn->query($record_count);
+
+// Get clients count the count
+$records_count = 0;
+if ($clients_count->num_rows > 0) {
+    $row_count = $clients_count->fetch_assoc();
+    $records_count = $row_count['records_count'];
+}
 ?>
 <div class="page-content-wrapper ">
     <div class="container-fluid">
@@ -47,40 +57,28 @@ if ($result_count->num_rows > 0) {
             <div class="col-lg-9">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="icon-contain">
-                                    <div class="row">
-                                        <div class="col-2 align-self-center">
-                                            <i class="fas fa-tasks text-gradient-success"></i>
-                                        </div>
-                                        <div class="col-10 text-right">
-                                            <h5 class="mt-0 mb-1"></h5>
-                                            <p class="mb-0 font-12 text-muted"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
+                    <a href="records.php">
                         <div class="card">
                             <div class="card-body justify-content-center">
                                 <div class="icon-contain">
                                     <div class="row">
                                         <div class="col-2 align-self-center">
-                                            <i class="far fa-gem text-gradient-danger"></i>
+                                            <i class="far fa-gem text-gradient-danger">Clients</i>
                                         </div>
                                         <div class="col-10 text-right">
                                             <h5 class="mt-0 mb-1"></h5>
-                                            <p class="mb-0 font-12 text-muted"></p>
+                                            <p class="mb-0 font-12 text-muted"> <?= $records_count ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        </a>
                     </div>
+                    
+                   
                     <div class="col-lg-3">
+                    <a href="users.php">
                         <div class="card">
                             <div class="card-body">
                                 <div class="icon-contain">
@@ -96,25 +94,9 @@ if ($result_count->num_rows > 0) {
                                 </div>
                             </div>
                         </div>
+                        </a>
                     </div>
-
-                    <div class="col-lg-3">
-                        <div class="card ">
-                            <div class="card-body">
-                                <div class="icon-contain">
-                                    <div class="row">
-                                        <div class="col-2 align-self-center">
-                                            <i class="fas fa-database text-gradient-primary"></i>
-                                        </div>
-                                        <div class="col-10 text-right">
-                                            <h5 class="mt-0 mb-1"></h5>
-                                            <p class="mb-0 font-12 text-muted"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
