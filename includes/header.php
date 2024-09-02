@@ -145,19 +145,16 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                                         <div class="dropdown-item noti-title">
                                             <h5><span class="badge badge-danger float-right">87</span>Notification</h5>
                                         </div>
-
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
                                             <p class="notify-details"><b>Your order is placed</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
                                         </a>
-
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-success"><i class="mdi mdi-message"></i></div>
                                             <p class="notify-details"><b>New Message received</b><small class="text-muted">You have 87 unread messages</small></p>
                                         </a>
-
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-warning"><i class="mdi mdi-glass-cocktail"></i></div>
@@ -203,7 +200,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                                     </form>
                                 </li>
                             </ul>
-
                             <div class="clearfix"></div>
                         </nav>
                     </div>
