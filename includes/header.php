@@ -1,6 +1,5 @@
 <?php 
-session_start(); // Start session to access session variables
-
+include "session.php";
 // Check if the user is logged in
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
     $userName = $_SESSION['user_name'];
@@ -52,16 +51,29 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                             <li>
                                 <a href="/adminnew" class="waves-effect">
                                     <i class="dripicons-device-desktop"></i>
-                                    <span> Dashboard <span class="badge badge-pill badge-primary float-right">7</span></span>
+                                    <span> Dashboard <span class="badge badge-pill badge-primary float-right"></span></span>
                                 </a>
                             </li>
                             <li class="menu-title">Account</li>
-
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-card"></i><span>Users</span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="users.php">Manage Users</a></li>
                                     <li><a href="adduser.php">Add Users</a></li>                              
+                                </ul>
+                            </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-card"></i><span></span>Clients<span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="records.php">Manage Records</a></li>
+                                    <li><a href="addrecords.php">Add Record</a></li>                              
+                                </ul>
+                            </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-card"></i><span></span>System<span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="systemlogs.php">System Logs</a></li>
+                                                          
                                 </ul>
                             </li>
                         </ul>
@@ -84,28 +96,17 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
 
                             <ul class="list-inline float-right mb-0">
                                 <!-- language-->
-                                <li class="list-inline-item dropdown notification-list hide-phone">
-                                    <a class="nav-link dropdown-toggle arrow-none waves-effect text-white" data-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="false" aria-expanded="false">
-                                        English <img src="assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt=""/>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right language-switch">
-                                        <a class="dropdown-item" href="#"><img src="assets/images/flags/italy_flag.jpg" alt="" height="16"/><span> Italian </span></a>
-                                        <a class="dropdown-item" href="#"><img src="assets/images/flags/french_flag.jpg" alt="" height="16"/><span> French </span></a>
-                                        <a class="dropdown-item" href="#"><img src="assets/images/flags/spain_flag.jpg" alt="" height="16"/><span> Spanish </span></a>
-                                        <a class="dropdown-item" href="#"><img src="assets/images/flags/russia_flag.jpg" alt="" height="16"/><span> Russian </span></a>
-                                    </div>
-                                </li>
+                        
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="false" aria-expanded="false">
                                         <i class="dripicons-mail noti-icon"></i>
-                                        <span class="badge badge-danger noti-icon-badge">5</span>
+                                        <span class="badge badge-danger noti-icon-badge">0</span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
                                         <!-- item-->
                                         <div class="dropdown-item noti-title">
-                                            <h5><span class="badge badge-danger float-right">745</span>Messages</h5>
+                                            <h5><span class="badge badge-danger float-right"></span>Messages</h5>
                                         </div>
 
                                         <!-- item-->
@@ -113,19 +114,6 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                                             <div class="notify-icon"><img src="assets/images/users/avatar-2.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
                                             <p class="notify-details"><b>Charles M. Jones</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
                                         </a>
-
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon"><img src="assets/images/users/avatar-3.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
-                                            <p class="notify-details"><b>Thomas J. Mimms</b><small class="text-muted">You have 87 unread messages</small></p>
-                                        </a>
-
-                                        <!-- item-->
-                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                            <div class="notify-icon"><img src="assets/images/users/avatar-4.jpg" alt="user-img" class="img-fluid rounded-circle" /> </div>
-                                            <p class="notify-details"><b>Luis M. Konrad</b><small class="text-muted">It is a long established fact that a reader will</small></p>
-                                        </a>
-
                                         <!-- All-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item border-top">
                                             View All
@@ -138,23 +126,25 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="false" aria-expanded="false">
                                         <i class="dripicons-bell noti-icon"></i>
-                                        <span class="badge badge-success noti-icon-badge">2</span>
+                                        <span class="badge badge-success noti-icon-badge">0</span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
                                         <!-- item-->
                                         <div class="dropdown-item noti-title">
-                                            <h5><span class="badge badge-danger float-right">87</span>Notification</h5>
+                                            <h5><span class="badge badge-danger float-right">0</span>Notification</h5>
                                         </div>
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
                                             <p class="notify-details"><b>Your order is placed</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
                                         </a>
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-success"><i class="mdi mdi-message"></i></div>
                                             <p class="notify-details"><b>New Message received</b><small class="text-muted">You have 87 unread messages</small></p>
                                         </a>
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-warning"><i class="mdi mdi-glass-cocktail"></i></div>
