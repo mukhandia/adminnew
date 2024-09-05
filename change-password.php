@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 if ($updateStmt->execute()) {
                     $success = "Password changed successfully!";
+                    header('Location: auth/login.php?message=pasword uodated successfully');
                 } else {
                     $error = "Error updating password.";
                 }
