@@ -51,14 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $error = "Error preparing statement: " . $conn->error;
     }
-
     $conn->close();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,12 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Dashboard Login</title>
     <meta content="Admin Dashboard" name="description" />
     <meta content="Mannatthemes" name="author" />
-    <link rel="shortcut icon" href="../assets/images/favicon.png">
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/icons.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
-
 <body class="fixed-left">
     <div class="wrapper-page">
         <div class="card">

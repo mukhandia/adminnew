@@ -49,17 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->Password   = 'mUyM,aSHw*mk';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
-
             //Recipients
             $mail->setFrom('fwasike@afripixelsolutions.com', 'Afrpixel');
             $mail->addAddress($email);
-
             // Content
             $mail->isHTML(true);
             $mail->Subject = 'Password Reset Request';
             $mail->Body    = "Please click the following link to reset your password: <a href=\"$reset_link\">Reset Password</a>";
             $mail->AltBody = "Please copy and paste the following link to reset your password: $reset_link";
-
             $mail->send();
             echo 'Password reset email sent!';
         } catch (Exception $e) {

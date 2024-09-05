@@ -3,8 +3,12 @@ include "session.php";
 // Check if the user is logged in
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
     $userName = $_SESSION['user_name'];
+    // Add user activity log here
+        logAction("User logged in. ID: $user_id, Name: $userName");
+    // Replace the placeholder with actual logging logic
+
 } else {
-    $userName = "Guest"; // Default to "Guest" if not logged in
+    $userName = "Guest"; 
 }
 ?>
 <!DOCTYPE html>
@@ -18,7 +22,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="assets/images/favicon.png">
+        <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
@@ -122,19 +126,19 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
-                                            <p class="notify-details"><b>Your order is placed</b><small class="text-muted">Dummy text of the printing and typesetting industry.</small></p>
+                                            <p class="notify-details"><b></b><small class="text-muted"></small></p>
                                         </a>
 
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-success"><i class="mdi mdi-message"></i></div>
-                                            <p class="notify-details"><b>New Message received</b><small class="text-muted">You have 87 unread messages</small></p>
+                                            <p class="notify-details"><b></b><small class="text-muted"></small></p>
                                         </a>
 
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon bg-warning"><i class="mdi mdi-glass-cocktail"></i></div>
-                                            <p class="notify-details"><b>Your item is shipped</b><small class="text-muted">It is a long established fact that a reader will</small></p>
+                                            <p class="notify-details"><b></b><small class="text-muted"></small></p>
                                         </a>
                                         
                                         <!-- All-->
@@ -151,13 +155,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
-                                        <div class="dropdown-item noti-title">
-                                            <h5>Welcome</h5>
-                                        </div>
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5 text-muted"></i> My Wallet</a>
-                                        <a class="dropdown-item" href="#"><span class="badge badge-success float-right">5</span><i class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Lock screen</a>
+                                        <a class="dropdown-item" href=""><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i>Change Password</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="./logout.php"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                                     </div>
