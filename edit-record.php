@@ -35,7 +35,7 @@ $record = $result->fetch_assoc();
                     <div class="form-group row">
                         <label for="company_name" class="col-sm-4 col-form-label">Company Name</label>
                         <div class="col-sm-12">
-                            <input class="form-control" type="text" id="company_name" name="company_name" value="<?= htmlspecialchars($record['company_name']) ?>" required>
+                            <input readonly class="form-control" type="text" id="company_name" name="company_name" value="<?= htmlspecialchars($record['company_name']) ?>" required>
                         </div>
                     </div>
 

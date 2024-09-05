@@ -12,7 +12,7 @@ $result = $conn->query($sql);
             <div class="card-body">
                 <h5 class="header-title pb-3 mt-0">Business Records</h5>
                 <div class="table-responsive">
-                    <table class="table table-hover mb-0">
+                    <table id="datatable-buttons" class="table table-hover mb-0">
                         <thead>
                             <tr class="align-self-center">
                                 <th>S/N</th>
@@ -69,7 +69,7 @@ $result = $conn->query($sql);
                                         <td><?= htmlspecialchars($row['follow_ups']); ?></td>
                                         <td>
                                             <a href="edit-record.php?id=<?= $row['id']; ?>" class="btn btn-primary btn-sm">Edit</a>
-                                            <a href="delete-record.php?id=<?= $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>
+                                            <a style="background-color:#CB0000" href="delete-record.php?id=<?= $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this record?');">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>

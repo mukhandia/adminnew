@@ -18,7 +18,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
         <meta content="Mannatthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="assets/images/favicon.png">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
@@ -38,7 +38,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center bg-logo">
-                        <a href="/adminnew" class="logo"><i class="mdi mdi-bowling text-danger"></i>Afripixel</a>
+                        <a href="/adminnew" class="logo"> <img src="assets/images/afripixel.png" alt="">  Afripixel</a>
                         <!-- <a href="index.html" class="logo"><img src="assets/images/logo.png" height="24" alt="logo"></a> -->
                     </div>
                 </div>
@@ -168,10 +168,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                                         <div class="dropdown-item noti-title">
                                             <h5>Welcome</h5>
                                         </div>
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5 text-muted"></i> My Wallet</a>
-                                        <a class="dropdown-item" href="#"><span class="badge badge-success float-right">5</span><i class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
-                                        <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Lock screen</a>
+                                        <a class="dropdown-item" href="../change-password.php"><span class="badge badge-success float-right">5</span><i class="mdi mdi-settings m-r-5 text-muted"></i>Change Password</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="./logout.php"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                                     </div>

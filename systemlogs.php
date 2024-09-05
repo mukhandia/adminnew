@@ -22,13 +22,13 @@ $result = $conn->query($sql);
             <div class="card-body">
                 <h5 class="header-title pb-3 mt-0">Action Logs</h5>
                 <div class="table-responsive">
-                    <table class="table table-hover mb-0">
+                    <table id="datatable-buttons" class="table table-hover mb-0">
                         <thead>
                             <tr class="align-self-center">
                                 <th>S/N</th>
                                 <th>User</th>
                                 <th>Action</th>
-                                <th>Record ID</th>
+                                <th>Company Name</th>
                                 <th>Field Changed</th>
                                 <th>Old Value</th>
                                 <th>New Value</th>
@@ -43,7 +43,7 @@ $result = $conn->query($sql);
                                         <td><?= $sn++; ?></td>
                                         <td><?= htmlspecialchars($row['user_name']); ?></td> <!-- Display the username -->
                                         <td><?= htmlspecialchars($row['action']); ?></td>
-                                        <td><?= htmlspecialchars($row['record_id']); ?></td>
+                                        <td><?= htmlspecialchars($row['company_name']); ?></td>
                                         <td><?= htmlspecialchars($row['field_changed']); ?></td>
                                         <td><?= htmlspecialchars($row['old_value']); ?></td>
                                         <td><?= htmlspecialchars($row['new_value']); ?></td>

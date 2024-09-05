@@ -46,14 +46,14 @@ $result = $conn->query($sql);
                                         <td><?= htmlspecialchars($row['role']); ?></td>
                                         <td><?= htmlspecialchars($row['registered_time']); ?></td>
                                         <td>
-                                            <a data-toggle="modal"
+                                            <a style="color:white" data-toggle="modal"
                                                 data-animation="bounce"
                                                 data-target=".bs-example-modal-center" class="btn btn-sm btn-primary edit-btn"
                                                 data-id="<?= $row['id']; ?>"
                                                 data-name="<?= htmlspecialchars($row['name']); ?>"
                                                 data-email="<?= htmlspecialchars($row['email']); ?>"
                                                 data-role="<?= htmlspecialchars($row['role']); ?>">Edit</a>
-                                            <a href="handlers/delete-user.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                                            <a  style="color:white;background-color:#CB0000" href="handlers/delete-user.php?id=<?= $row['id']; ?>" class="btn btn-sm" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>

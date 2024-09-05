@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
                         <div class="form-group m-t-10 mb-0 row">
                             <div class="col-sm-7 m-t-20">
-                                <a href="" class="text-muted"><i class="mdi mdi-lock"></i> <small>Forgot your password?</small></a>
+                                <a href="../forgot-password.php" class="text-muted"><i class="mdi mdi-lock"></i> <small>Forgot your password?</small></a>
                             </div>
                         </div>
                     </form>
