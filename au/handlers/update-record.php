@@ -13,7 +13,7 @@ $user_id = intval($_SESSION['user_id']);
 $user_name = $_SESSION['user_name'] ?? 'Unknown User'; // Fetch user name from session or default
 
 // Specific email address to receive notifications
-$recipient_email = 'support@afripixelsolutions.com';
+$recipient_email = 'felixmukhandia@gmail.com';
 
 // Process the form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

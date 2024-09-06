@@ -1,51 +1,58 @@
 <?php
-require 'vendor/autoload.php'; // Ensure Composer's autoload is included
-require 'includes/dbconnection.php'; // Ensure your database connection is included
+session_start();
+require 'includes/dbconnection.php'; 
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-// Process the form when submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $token = $_POST['token'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    // Get user inputs
+    $oldPassword = $_POST['oldpassword'];
+    $newPassword = $_POST['password'];
+    $confirmPassword = $_POST['confirm_password'];
 
-    // Validate that the passwords match
-    if ($password !== $confirm_password) {
-        $error = "Passwords do not match.";
+    // Check if user ID is set in the session
+    if (!isset($_SESSION['user_id'])) {
+        die('No user ID found in session. Please log in.');
+    }
+
+    $userId = $_SESSION['user_id'];
+
+    // Validate passwords
+    if (empty($oldPassword) || empty($newPassword) || empty($confirmPassword)) {
+        $error = "All fields are required.";
+    } elseif ($newPassword !== $confirmPassword) {
+        $error = "New password and confirm password do not match.";
     } else {
-        // Hash the new password
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-
-        // Check if the token exists and is valid
-        $query = "SELECT email FROM password_resets WHERE token = ? AND expiry_time > NOW()";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param('s', $token);
+        // Fetch the current password from the database
+        $sql = "SELECT password FROM user_table WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $userId);
         $stmt->execute();
         $result = $stmt->get_result();
 
-        if ($result->num_rows === 1) {
-            $row = $result->fetch_assoc();
-            $email = $row['email'];
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            $currentPasswordHash = $user['password'];
 
-            // Update the user's password
-            $update_query = "UPDATE users SET password = ? WHERE email = ?";
-            $update_stmt = $conn->prepare($update_query);
-            $update_stmt->bind_param('ss', $hashed_password, $email);
-            $update_stmt->execute();
+            // Verify the old password
+            if (!password_verify($oldPassword, $currentPasswordHash)) {
+                $error = "The old password is incorrect.";
+            } else {
+                // Hash the new password
+                $newPasswordHash = password_hash($newPassword, PASSWORD_BCRYPT);
 
-            // Optionally delete the token from the database
-            $delete_query = "DELETE FROM password_resets WHERE token = ?";
-            $delete_stmt = $conn->prepare($delete_query);
-            $delete_stmt->bind_param('s', $token);
-            $delete_stmt->execute();
+                // Update the password in the database
+                $updateSql = "UPDATE user_table SET password = ? WHERE id = ?";
+                $updateStmt = $conn->prepare($updateSql);
+                $updateStmt->bind_param('si', $newPasswordHash, $userId);
 
-            // Redirect to login or success page
-            header("Location: auth/login.php?reset_success=1");
-            exit();
+                if ($updateStmt->execute()) {
+                    $success = "Password changed successfully!";
+                    header('Location: auth/login.php?message=pasword uodated successfully');
+                } else {
+                    $error = "Error updating password.";
+                }
+            }
         } else {
-            $error = "Invalid or expired token.";
+            $error = "User not found.";
         }
     }
 }
@@ -67,21 +74,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body class="fixed-left">
-    <div class="accountbg"></div>
     <div class="wrapper-page">
         <div class="card">
             <div class="card-body">
                 <div class="text-center m-b-15">
-                    <a href="index.html" class="logo logo-admin"><img src="assets/images/logo.png" height="24" alt="logo"></a>
+                    <a href="./index.php" class="logo logo-admin"><img src="assets/images/logo.png" height="24" alt="logo">Afripixel</a>
                 </div>
                 <div class="p-3">
-                    <?php if (isset($error)): ?>
-                        <div class="alert alert-danger">
-                            <?php echo htmlspecialchars($error); ?>
-                        </div>
+
+                    <!-- Display success or error message -->
+                    <?php if (isset($success)): ?>
+                        <div class="alert alert-success"><?php echo $success; ?></div>
+                    <?php elseif (isset($error)): ?>
+                        <div class="alert alert-danger"><?php echo $error; ?></div>
                     <?php endif; ?>
+
+                    <!-- Password change form -->
                     <form class="form-horizontal" action="" method="POST">
-                        <input type="hidden" name="token" value="<?php echo htmlspecialchars($_GET['token']); ?>">
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <input class="form-control" type="password" name="oldpassword" required="" placeholder="Old Password">
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <div class="col-12">
                                 <input class="form-control" type="password" name="password" required="" placeholder="New Password">
@@ -94,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="form-group text-center row m-t-20">
                             <div class="col-12">
-                                <button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Reset Password</button>
+                                <button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Change Password</button>
                             </div>
                         </div>
                         <div class="form-group m-t-10 mb-0 row">

@@ -3,10 +3,6 @@ include "session.php";
 // Check if the user is logged in
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
     $userName = $_SESSION['user_name'];
-    // Add user activity log here
-        logAction("User logged in. ID: $user_id, Name: $userName");
-    // Replace the placeholder with actual logging logic
-
 } else {
     $userName = "Guest"; 
 }
@@ -42,7 +38,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center bg-logo">
-                        <a href="/adminnew/au" class="logo"><i class="mdi mdi-bowling text-danger"></i>Afripixel</a>
+                        <a href="/au" class="logo"><i class="mdi mdi-bowling text-danger"></i>Afripixel</a>
                         <!-- <a href="index.html" class="logo"><img src="assets/images/logo.png" height="24" alt="logo"></a> -->
                     </div>
                 </div>
@@ -53,7 +49,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                             <li class="menu-title">Main</li>
 
                             <li>
-                                <a href="/adminnew/au" class="waves-effect">
+                                <a href="/au" class="waves-effect">
                                     <i class="dripicons-device-desktop"></i>
                                     <span> Dashboard <span class="badge badge-pill badge-primary float-right"></span></span>
                                 </a>
@@ -155,7 +151,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['user_name'])) {
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <!-- item-->
-                                        <a class="dropdown-item" href=""><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i>Change Password</a>
+                                        <a class="dropdown-item" href="../change-password.php"><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i>Change Password</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="./logout.php"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                                     </div>

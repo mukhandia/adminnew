@@ -30,6 +30,33 @@
 2024-09-06 01:24:25 - User with email felixmukhandia@gmail.com logged in successfully.
 2024-09-06 01:33:43 - User with email felixmukhandia@gmail.com logged in successfully.
 2024-09-06 01:34:00 - User with email felixmukhandia@gmail.com logged in successfully.
+<<<<<<< HEAD
 2024-09-06 18:09:23 - User with email carson@gmail.com logged in successfully.
 2024-09-06 18:09:23 - User with email carson@gmail.com attempted to login with unauthorized role.
 2024-09-06 18:09:23 - User logged in. ID: , Name: Carson
+=======
+2024-09-05 19:41:59 - User with email felixmukhandia@gmail.com logged in successfully.
+2024-09-05 19:41:59 - User with email felixmukhandia@gmail.com attempted to login with unauthorized role.
+2024-09-05 19:42:00 - User with email felixmukhandia@gmail.com logged in successfully.
+2024-09-05 19:42:00 - User with email felixmukhandia@gmail.com attempted to login with unauthorized role.
+2024-09-05 19:42:00 - User logged in. ID: , Name: fasike
+2024-09-05 19:42:44 - User logged in. ID: , Name: fasike
+2024-09-05 19:42:50 - User logged in. ID: , Name: fasike
+2024-09-05 19:42:54 - User logged out. ID: 10, Name: fasike
+2024-09-05 19:42:57 - User logged in. ID: , Name: fasike
+2024-09-05 19:45:01 - User logged in. ID: , Name: fasike
+2024-09-05 19:45:10 - User logged out. ID: 10, Name: fasike
+2024-09-05 19:45:40 - User logged in. ID: , Name: fasike
+2024-09-05 19:45:49 - User logged out. ID: 10, Name: fasike
+2024-09-05 19:45:59 - User with email felixmukhandia@gmail.com logged in successfully.
+2024-09-05 19:45:59 - User with email felixmukhandia@gmail.com attempted to login with unauthorized role.
+2024-09-05 19:46:01 - User logged in. ID: , Name: fasike
+2024-09-05 20:23:50 - User logged in. ID: , Name: fasike
+2024-09-05 20:24:01 - User logged in. ID: , Name: fasike
+2024-09-05 20:24:07 - User logged in. ID: , Name: fasike
+2024-09-05 20:24:21 - User logged in. ID: , Name: fasike
+2024-09-05 20:25:03 - User logged in. ID: , Name: fasike
+2024-09-05 20:25:10 - User logged in. ID: , Name: fasike
+2024-09-05 20:25:20 - User logged in. ID: , Name: fasike
+2024-09-05 20:26:56 - User logged in. ID: , Name: fasike
+>>>>>>> 0c2bb42d453b3a51c256469d04c86d1c7b40e839

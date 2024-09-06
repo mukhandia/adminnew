@@ -19,10 +19,8 @@ $result = $stmt->get_result();
 if ($result->num_rows === 0) {
     die("Record not found.");
 }
-
 $record = $result->fetch_assoc();
 ?>
-
 <div class="row m-t-10">
     <div class="col-12">
         <div class="card">
@@ -30,7 +28,6 @@ $record = $result->fetch_assoc();
                 <h4 class="mt-0 header-title">Edit Business Record</h4>
                 <form action="handlers/update-record.php" method="POST">
                     <input type="hidden" name="id" value="<?= $record['id'] ?>">
-
                     <!-- Form Fields -->
                     <div class="form-group row">
                         <label for="company_name" class="col-sm-4 col-form-label">Company Name</label>
@@ -38,28 +35,24 @@ $record = $result->fetch_assoc();
                             <input readonly class="form-control" type="text" id="company_name" name="company_name" value="<?= htmlspecialchars($record['company_name']) ?>" required>
                         </div>
                     </div>
-
                     <div class="form-group row">
                         <label for="phone_number" class="col-sm-4 col-form-label">Phone Number</label>
                         <div class="col-sm-12">
                             <input class="form-control" type="text" id="phone_number" name="phone_number" value="<?= htmlspecialchars($record['phone_number']) ?>" required>
                         </div>
                     </div>
-
                     <div class="form-group row">
                         <label for="email_address" class="col-sm-4 col-form-label">Email Address</label>
                         <div class="col-sm-12">
                             <input class="form-control" type="email" id="email_address" name="email_address" value="<?= htmlspecialchars($record['email_address']) ?>" required>
                         </div>
                     </div>
-
                     <div class="form-group row">
                         <label for="lead_source" class="col-sm-4 col-form-label">Lead Source</label>
                         <div class="col-sm-12">
                             <input class="form-control" type="text" id="lead_source" name="lead_source" value="<?= htmlspecialchars($record['lead_source']) ?>" required>
                         </div>
                     </div>
-
                     <div class="form-group row">
                         <label for="decision_maker_name" class="col-sm-4 col-form-label">Decision Maker Name</label>
                         <div class="col-sm-12">
